@@ -5,37 +5,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
     <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <div class="card">
-        <div class="search">
-            <input type="text" placeholder="Enter city name" spellcheck="false" id="searchInput">
-            <button id="searchBtn"><img src="images/search.png"></button>
-
-        </div>
-        <div class="error">
-            <p>Invalid City Name</p>
-        </div>
-        <div class="weather">
-        <img src="images/rain.png" class="weather-icon">
-        <h1 class="temp">22°c</h1>
-        <h2 class="city">New York</h2>
-        <div class="details">
-            <div class="col">
-                <img src="images/humidity.png">
-                <div>
-                    <p class="humidity">50%</p>
-                    <p>Humidity</p>
+    <div class="container">
+        <div class="card">
+            <div class="search">
+                <input type="text" placeholder="Enter city name" spellcheck="false" id="searchInput">
+                <button id="searchBtn"><i class="fas fa-search"></i></button>
+                <button id="locationBtn" title="Use my location"><i class="fas fa-location-arrow"></i></button>
+            </div>
+            
+            <div class="loading">
+                <div class="spinner"></div>
+                <p>Loading weather data...</p>
+            </div>
+            
+            <div class="error">
+                <i class="fas fa-exclamation-triangle"></i>
+                <p>City not found. Please check the spelling and try again.</p>
+            </div>
+            
+            <div class="weather">
+                <div class="weather-header">
+                    <img src="images/rain.png" class="weather-icon" alt="Weather">
+                    <div class="temp-container">
+                        <h1 class="temp">22°c</h1>
+                        <button class="unit-toggle" id="unitToggle">°C</button>
+                    </div>
+                    <h2 class="city">New York</h2>
+                    <p class="weather-desc">Light Rain</p>
+                    <p class="date-time">Today, 2:30 PM</p>
+                </div>
+                
+                <div class="weather-details">
+                    <div class="detail-item">
+                        <i class="fas fa-thermometer-half"></i>
+                        <div>
+                            <p class="feels-like">Feels like 20°c</p>
+                            <p>Feels Like</p>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-tint"></i>
+                        <div>
+                            <p class="humidity">50%</p>
+                            <p>Humidity</p>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-wind"></i>
+                        <div>
+                            <p class="wind">15 km/h</p>
+                            <p>Wind Speed</p>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-eye"></i>
+                        <div>
+                            <p class="visibility">10 km</p>
+                            <p>Visibility</p>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-compress-alt"></i>
+                        <div>
+                            <p class="pressure">1013 hPa</p>
+                            <p>Pressure</p>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-sun"></i>
+                        <div>
+                            <p class="uv-index">5</p>
+                            <p>UV Index</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="forecast">
+                    <h3>5-Day Forecast</h3>
+                    <div class="forecast-container" id="forecastContainer">
+                        <!-- Forecast items will be added here -->
+                    </div>
                 </div>
             </div>
-            <div class="col">
-                <img src="images/wind.png">
-                <div>
-                    <p class="wind">15 km/h</p>
-                    <p>Wind Speed</p>
-                </div>
-            </div>
-        </div>
         </div>
     </div>
     <script src="script.js"></script>
