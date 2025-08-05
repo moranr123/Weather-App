@@ -2,6 +2,10 @@
 
 A modern, responsive weather application with advanced features and beautiful UI design.
 
+## 🚀 Live Demo
+
+**[🌐 View Live Demo](https://moranr123.github.io/Weather-App/)**
+
 ## ✨ Features
 
 ### 🌟 New Features Added
